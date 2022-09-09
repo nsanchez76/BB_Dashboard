@@ -88,7 +88,8 @@ function buildCharts(sample) {
     var trace = {
       x: sampleValues,
       y: yticks,
-      type: "bar"
+      type: "bar",
+      orientation: 'h'
     };
 
     // Create the data array for the plot
