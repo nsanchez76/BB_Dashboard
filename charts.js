@@ -107,24 +107,18 @@ function buildCharts(sample) {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", data, layout);
 
-    // Bubble charts
-    var bubbleColors = function chooseColor(sampleValues) {
-      if(sampleValues>=2500) return "red";
-      if(sampleValues>=1500) return "orange";
-      if(sampleValues>=1000) return "yellow";
-      if(sampleValues>=500) return "green";
-      return "blue";
-    };
 
     // 1. Create the trace for the bubble chart.
+    //var x = otuIDs;
+
     var trace1 = {
       x: otuIDs,
       y: sampleValues,
       text: otuLabels,
       mode: 'markers',
       marker: {
-        color: [bubbleColors],
-        colorscale: [[0, 'rgb(200, 255, 200)'], [1, 'rgb(0, 100, 0)']],
+        color: otuIDs,
+        colorscale: 'Electric',
         size: sampleValues
       }
     };
